@@ -5,7 +5,8 @@ public:
         int profit=0;
         int sell;
         int cost;
-        for(int i=1;i<prices.size();i++)
+        int n=prices.size();
+        for(int i=1;i<n;i++)
         {
             sell=prices[i];
             cost=sell-buy;
