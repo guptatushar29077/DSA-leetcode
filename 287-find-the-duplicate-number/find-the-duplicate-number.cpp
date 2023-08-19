@@ -7,14 +7,13 @@ public:
         do{
             slow=nums[slow];
             fast=nums[nums[fast]];
-        }while(slow!=fast);
+        }while(fast!=slow);
         fast=nums[0];
-        while(slow!=fast)
+        while(fast!=slow)
         {
-            slow=nums[slow];
             fast=nums[fast];
-
+            slow=nums[slow];
         }
-        return slow;
+        return fast;
     }
 };
