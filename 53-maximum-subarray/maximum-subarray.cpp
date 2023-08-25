@@ -3,17 +3,17 @@ public:
     int maxSubArray(vector<int>& nums) {
         
 
-        long long curr=0;
-        long long mx=INT_MIN;
-        for(int i=0;i<nums.size();i++)
-        {
+        int curr=0;
+        int mx=INT_MIN;
+        int n=nums.size();
+        for(int i=0;i<n;i++){
             curr+=nums[i];
-            mx=max(curr,mx);
+            mx=max(mx,curr);
             if(curr<0)
             {
                 curr=0;
             }
         }
-        return (int)mx;
+    return mx;
     }
 };
