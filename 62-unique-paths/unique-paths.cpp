@@ -2,20 +2,14 @@ class Solution {
 public:
     int uniquePaths(int m, int n) {
         
-        int dp[n][m];
-        for(int i=0;i<n;i++)
+
+        int N=(n+m)-2;
+        int r=m-1;
+        double res=1;
+        for(int i=1;i<=r;i++)
         {
-            for(int j=0;j<m;j++)
-            {
-                if(i==0 || j==0)
-                {
-                    dp[i][j]=1;
-                }
-                else{
-                    dp[i][j]=dp[i-1][j]+dp[i][j-1];
-                }
-            }
+            res=res*(N-r+i)/i;
         }
-        return dp[n-1][m-1];
+        return (int)res;
     }
 };
