@@ -3,56 +3,57 @@ public:
     vector<int> majorityElement(vector<int>& nums) {
         
 
-        int ele1=INT_MIN,ele2=INT_MIN;
-        int cnt1=0,cnt2=0;
-        for(int i=0;i<nums.size();i++)
+        int el1=INT_MIN,el2=INT_MIN;
+        int c1=0,c2=0;
+        int n=nums.size();
+        for(int i=0;i<n;i++)
         {
-            if(nums[i]==ele1)
-            {
-                cnt1++;
 
-            }
-            else if(nums[i]==ele2)
+
+            if(nums[i]==el1)
             {
-                cnt2++;
+                c1++;
             }
-            else if(cnt1==0)
+            else if(nums[i]==el2)
             {
-                cnt1=1;
-                ele1=nums[i];
+                c2++;
             }
-            else if(cnt2==0)
+            else if(c1==0)
             {
-                cnt2=1;
-                ele2=nums[i];
+                el1=nums[i];
+                c1=1;
+            }
+            else if(c2==0)
+            {
+                el2=nums[i];
+                c2=1;
             }
             else{
-                cnt1--;
-                cnt2--;
+                c1--;
+                c2--;
             }
+
         }
-          
-        int freq1=0,freq2=0;
-        for(int i=0;i<nums.size();i++)
+         c1=0,c2=0;
+        for(int i=0;i<n;i++)
         {
-            if(nums[i]==ele1)
+            if(nums[i]==el1)
             {
-                freq1++;
+                c1++;
             }
-            else if(nums[i]==ele2)
+            else if(nums[i]==el2)
             {
-                freq2++;
+                c2++;
             }
         }
         vector<int> ans;
-        int n=nums.size();
-        if(freq1>(n/3))
+        if(c1>(n/3))
         {
-            ans.push_back(ele1);
+            ans.push_back(el1);
         }
-        if(freq2>(n/3))
+        if(c2>(n/3))
         {
-            ans.push_back(ele2);
+            ans.push_back(el2);
         }
         return ans;
     }
