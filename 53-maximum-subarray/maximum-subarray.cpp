@@ -5,15 +5,16 @@ public:
 
         int curr=0;
         int mx=INT_MIN;
-        int n=nums.size();
-        for(int i=0;i<n;i++){
+        for(int i=0;i<nums.size();i++)
+        {
             curr+=nums[i];
-            mx=max(mx,curr);
+            mx=max(curr,mx);
             if(curr<0)
             {
                 curr=0;
             }
+
         }
-    return mx;
+        return mx;
     }
 };
