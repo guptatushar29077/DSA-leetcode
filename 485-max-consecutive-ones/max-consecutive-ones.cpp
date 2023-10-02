@@ -4,19 +4,17 @@ public:
         
 
         int cnt=0;
-        int ans=0;
+        int ans=INT_MIN;
         for(int i=0;i<nums.size();i++)
         {
             if(nums[i]==1)
             {
                 cnt++;
-                ans=max(ans,cnt);
-
             }
-            else{
-                ans=max(ans,cnt);
+            else {
                 cnt=0;
             }
+            ans=max(ans,cnt);
         }
         return ans;
     }
