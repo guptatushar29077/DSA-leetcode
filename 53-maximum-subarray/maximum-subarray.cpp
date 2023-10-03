@@ -13,7 +13,6 @@ public:
             {
                 curr=0;
             }
-
         }
         return mx;
     }
