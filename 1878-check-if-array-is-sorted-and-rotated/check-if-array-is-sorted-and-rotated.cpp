@@ -1,31 +1,28 @@
 class Solution {
 public:
-    bool check(vector<int>& nums) {
+    bool check(vector<int>& arr) {
 
-
-        int pair=0;
-        int n=nums.size();
-        for(int i=1;i<nums.size();i++)
+        int n=arr.size();
+        int cnt=0;
+        for(int i=1;i<n;i++)
         {
+           
             
-          if(nums[i-1]>nums[i])
-          {
-                pair++;
-          }
+                if(arr[i-1]>arr[i])
+                {
+                    cnt++;
+                }
+            
         }
-        if(nums[0]<nums[n-1])
+        if(arr[n-1]>arr[0])
         {
-            pair++;
+            cnt++;
         }
-        if(pair>=2)
-        {
-            return 0;
-        }
-        else if(pair==1)
+        if(cnt<=1)
         {
             return 1;
         }
+        else return 0;
         
-        return 1;
     }
 };
