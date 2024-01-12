@@ -2,7 +2,6 @@ class Solution {
 public:
     void nextPermutation(vector<int>& nums) {
         
-
         int idx1=-1;
         int n=nums.size();
         for(int i=n-2;i>=0;i--)
@@ -29,6 +28,5 @@ public:
         }
         swap(nums[idx1],nums[idx2]);
         reverse(nums.begin()+idx1+1,nums.end());
-
     }
 };
