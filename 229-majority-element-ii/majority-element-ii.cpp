@@ -1,8 +1,6 @@
 class Solution {
 public:
     vector<int> majorityElement(vector<int>& nums) {
-        
-
         int el1=INT_MIN,el2=INT_MIN;
         int c1=0,c2=0;
         int n=nums.size();
