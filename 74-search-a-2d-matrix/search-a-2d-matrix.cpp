@@ -8,7 +8,6 @@ public:
         int m=matrix[0].size();
         int i=0;
         int j=m-1;
-        int curr=matrix[i][j];
         while(i>=0 && i<n && j>=0 && j<m)
         {
             if(matrix[i][j]==target)
@@ -24,5 +23,6 @@ public:
             }
         }
         return 0;
+
     }
 };
