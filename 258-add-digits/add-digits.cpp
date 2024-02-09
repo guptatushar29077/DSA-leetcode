@@ -1,40 +1,29 @@
 class Solution {
 public:
-int count(int n)
-{
-    int c=0;
-    while(n!=0)
+    int sum(int n)
     {
-        c++;
-        n/=10;
+        int cnt=0;
+        while(n!=0)
+        {
+            cnt+=n%10;
+            n/=10;
+        }
+        return cnt;
     }
-    return c;
-}
     int addDigits(int num) {
-        
+
         if(num==0)
         {
             return 0;
+       
         }
-
-        int ans;
-        int temp=num;
-        do
-        {   
-               ans=0;
-            while(num!=0)
-            {
-                int last_digit=num%10;
-                num/=10;
-                ans=ans+last_digit;
-            }
-            num=ans;
+    
+        while(num>9)
+        {
+            int cnt=sum(num);
+            num=cnt;
             
-        }while(count(ans)>1);
-        
-        return ans;
-        
-        
-        
+        }
+        return num;
     }
 };
